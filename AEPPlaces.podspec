@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AEPPlaces"
-  s.version      = "4.0.0"
+  s.version      = "4.1.0"
   s.summary      = "Places extension for Adobe Experience Cloud SDK. Written and maintained by Adobe."
   s.description  = <<-DESC
                    The Places extension is used in conjunction with Adobe Experience Platform to deliver location functionality.
