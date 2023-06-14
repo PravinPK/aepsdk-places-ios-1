@@ -18,6 +18,8 @@ import AEPSignal
 import AEPAnalytics
 import AEPIdentity
 import AEPLifecycle
+import AEPEdgeIdentity
+import AEPEdge
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,12 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // steve-places in Adobe Benedick Corp: launch-EN459260fc579a4dcbb2d1743947e65f09-development
         MobileCore.configureWith(appId: "launch-EN459260fc579a4dcbb2d1743947e65f09-development")
-
         let appState = application.applicationState
-        MobileCore.registerExtensions([Places.self, Signal.self, Analytics.self, Identity.self, Lifecycle.self, Assurance.self]) {
+        MobileCore.registerExtensions([Places.self, Signal.self, Analytics.self, Identity.self, Lifecycle.self, Assurance.self,  AEPEdgeIdentity.Identity.self, Edge.self]) {
             // Griffon Session - AEPPlaces in Adobe Benedick Corp
-            Assurance.startSession(url: URL(string: "aepplaces://?adb_validation_sessionid=a738aeff-f12d-4015-b4af-bc61969618ce")!)
-
+            //Assurance.startSession(url: URL(string: "<YOUR_ASSURANCE_SESSIONID>"))
             if appState != .background {
                 MobileCore.lifecycleStart(additionalContextData: nil)
             }
